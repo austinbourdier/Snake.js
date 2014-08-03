@@ -9,9 +9,9 @@ var Model = {
     } else if (event.which == 40){
       Controller.moveSnake("down");
     }
-    if(Math.abs($('.snake').css("top").slice(0,-2) - $('.food').css("top").slice(0,-2)) < 10 && Math.abs($('.snake').css("left").slice(0,-2) - $('.food').css("left").slice(0,-2)) < 10){
+    if($('.snake').css("top").slice(0,-2) <= $('.food').css("top").slice(0,-2) && $('.food').css("top").slice(0,-2) <= (eval($('.snake').css("height").slice(0,-2)) + eval($('.food').css("top").slice(0,-2))) && $('.snake').css("left").slice(0,-2) <= $('.food').css("left").slice(0,-2) && $('.food').css("left").slice(0,-2) <= eval($('.snake').css("width").slice(0,-2)) + eval($('.food').css("left").slice(0,-2))){
       Controller.moveFood();
-      this.increaseSnakeLength();
+      Model.increaseSnakeLength();
     }
   },
   increaseSnakeLength: function(){

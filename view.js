@@ -14,6 +14,10 @@ var View = {
   animateFood: function (event){
     $('.food').css("top", String(Math.round(Math.random()*50)*10) + "px");
     $('.food').css("left", String(Math.round(Math.random()*50)*10) + "px");
+  },
+  increaseSnakeSize: function (event){
+   $('.snake').animate({"height": "+=10"}, "fast");
+   $('.snake').animate({"width": "+=10"}, "fast");
   }
 }
 

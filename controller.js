@@ -2,7 +2,7 @@ var Controller = {
   initialize: function(model, view){
     this.model = model;
     this.view = view;
-    this.snake = Snake.create;
+    this.snake = Snake;
   },
   bindEventListeners: function(){
     $(document).on('keyup', this.model.handler);
@@ -20,7 +20,8 @@ var Controller = {
   },
   growSnake: function(){
     this.snake.length++;
-  }
+    this.view.increaseSnakeSize(this.snake.length);
+  },
   moveFood: function(){
     this.view.animateFood();
   }
