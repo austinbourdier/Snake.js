@@ -35,7 +35,7 @@ var Controller = {
   die: function(){
     this.view.resetScore();
   },
-  moveEnemy: function(enemy, index){
-    this.view.animateEnemy(enemy, index)
+  moveEnemy: function(direction, enemy, index){
+    this.view.animateEnemy(direction, enemy, index)
   }
 }

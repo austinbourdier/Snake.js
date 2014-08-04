@@ -21,17 +21,16 @@ var View = {
   resetScore: function(){
     $('#score').text(0);
   },
-  animateEnemy:function(enemy, index){
+  animateEnemy:function(direction, enemy, index){
     var enemy = $('.enemy').eq(index);
-    var direction = ['left', 'up', 'right', 'down'][Math.floor(Math.random()*4)]
-    $('.enemy').clearQueue();
-    if (direction == 'up' && enemy.css('top') > "100px"){
+    enemy.clearQueue();
+    if (direction == 'up' && enemy.css('top') > "110px"){
       enemy.animate({"top": String(Math.round(enemy.css('top').slice(0, -2)/10)*10 - 10) } , "fast" );
-    } else if (direction == 'left' && enemy.css('left') > "100px"){
+    } else if (direction == 'left' && enemy.css('left') > "110px"){
       enemy.animate({"left": String(Math.round(enemy.css('left').slice(0, -2)/10)*10 - 10) }, "fast" );
-    } else if (direction == 'down' && enemy.css('top') < "590px"){
+    } else if (direction == 'down' && enemy.css('top') < "580px"){
       enemy.animate({"top": String(Math.round(enemy.css('top').slice(0, -2)/10)*10 + 10) } , "fast" );
-    } else if (direction == 'right' && enemy.css('left') < "590px"){
+    } else if (direction == 'right' && enemy.css('left') < "580px"){
       enemy.animate({"left": String(Math.round(enemy.css('left').slice(0, -2)/10)*10 + 10) } , "fast" );
     }
   }

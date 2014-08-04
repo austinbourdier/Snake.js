@@ -1,9 +1,9 @@
 var Model = {
   handler: function (event){
     $('.snake').clearQueue();
-    if (event.which == 37 && eval($('.snake').css("left").slice(0,-2)) > eval($('#board').css("left").slice(0,-2))){
+    if (event.which == 37 && eval($('.snake').css("left").slice(0,-2)) > eval($('#board').css("left").slice(0,-2))+10){
       Controller.moveSnake("left")
-    } else if (event.which == 38 && eval($('.snake').css("top").slice(0,-2)) > eval($('#board').css("top").slice(0,-2))){
+    } else if (event.which == 38 && eval($('.snake').css("top").slice(0,-2)) > eval($('#board').css("top").slice(0,-2))+10){
       Controller.moveSnake("up");
     } else if (event.which == 39 && eval($('.snake').css("left").slice(0,-2)) < eval($('#board').css("width").slice(0,-2))-10){
       Controller.moveSnake("right");
@@ -26,7 +26,8 @@ var Model = {
   chooseEnemyDirection: function(){
     var enemyCount = 0;
     $('.enemy').each(function(){
-      Controller.moveEnemy(this, enemyCount);
+      var direction = ['left', 'up', 'right', 'down'][Math.floor(Math.random()*4)]
+      Controller.moveEnemy(direction, this, enemyCount);
       enemyCount++;
     })
   }
