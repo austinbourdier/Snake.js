@@ -6,6 +6,9 @@ MasterController = {
     $(document).on("eat", function(){
       Controller.moveFood();
     })
+    $(document).on("move", function(){
+      Model.chooseEnemyDirection();
+    })
   }
 }
 

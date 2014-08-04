@@ -20,7 +20,7 @@ var Model = {
         Controller.die();
       }
     }
-    Model.chooseEnemyDirection();
+    $(document).trigger('move');
   },
   increaseSnakeLength: function(){
     Controller.growSnake();
