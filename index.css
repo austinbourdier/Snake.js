@@ -4,8 +4,8 @@ body{margin: 0;padding: 0}
 .snake{
     display: inline-block;
     position: fixed;
-    top: 50px;
-    left: 50px;
+    top: 150px;
+    left: 150px;
     width: 10px;
     height: 10px;
     background-color: black;
@@ -14,9 +14,31 @@ body{margin: 0;padding: 0}
 .food{
     display: inline-block;
     position: fixed;
-    top: 50px;
+    top: 150px;
     left: 250px;
     width: 10px;
     height: 10px;
+    background-color: green;
+}
+
+.enemy{
+    display: inline-block;
+    position: fixed;
+    top: 150px;
+    left: 200px;
+    width: 10px;
+    height: 10px;
     background-color: red;
+}
+
+#board{
+    top: 100px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+}
+
+.scoreBoard{
+    left: 150px;
+    text-align:
 }

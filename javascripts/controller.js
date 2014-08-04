@@ -3,9 +3,11 @@ var Controller = {
     this.model = model;
     this.view = view;
     this.snake = Snake;
+    this.snake.initialize();
   },
   bindEventListeners: function(){
-    $(document).on('keyup', this.model.handler);
+    this.subscribe(this);
+    $(document).on('keydown', this.model.handler);
   },
   moveSnake: function(direction){
     if (direction == "left"){
@@ -20,9 +22,20 @@ var Controller = {
   },
   growSnake: function(){
     this.snake.length++;
-    this.view.increaseSnakeSize(this.snake.length);
   },
   moveFood: function(){
     this.view.animateFood();
+  },
+  subscribe: function(self){
+    $(document).on("eat", function(){
+      self.model.increaseSnakeLength(self);
+      self.moveFood(self);
+    })
+  },
+  die: function(){
+    this.view.resetScore();
+  },
+  moveEnemy: function(enemy, index){
+    this.view.animateEnemy(enemy, index)
   }
 }
