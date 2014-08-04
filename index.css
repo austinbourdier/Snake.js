@@ -32,10 +32,12 @@ body{margin: 0;padding: 0}
 }
 
 #board{
+    position: absolute;
     top: 100px;
     left: 100px;
     width: 500px;
     height: 500px;
+    border: black 1px solid;
 }
 
 .scoreBoard{
