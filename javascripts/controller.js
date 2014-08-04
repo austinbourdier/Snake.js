@@ -11,13 +11,13 @@ var Controller = {
   },
   moveSnake: function(direction){
     if (direction == "left"){
-      this.view.leftSnake();
+      this.view.leftSnake(document.getElementsByClassName('snake'));
     } else if (direction == "up"){
-      this.view.upSnake();
+      this.view.upSnake(document.getElementsByClassName('snake'));
     } else if (direction == "right"){
-      this.view.rightSnake();
+      this.view.rightSnake(document.getElementsByClassName('snake'));
     } else if (direction == "down"){
-      this.view.downSnake();
+      this.view.downSnake(document.getElementsByClassName('snake'));
     }
   },
   growSnake: function(){

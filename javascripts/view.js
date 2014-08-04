@@ -23,15 +23,16 @@ var View = {
   },
   animateEnemy:function(enemy, index){
     $('.enemy').clearQueue();
+    var enemy = $('.enemy').eq(index);
     var direction = ['left', 'up', 'right', 'down'][Math.floor(Math.random()*4)]
     if (direction == 'up'){
-      $('.enemy').eq(index).animate({"top": String(Math.round($('.enemy').eq(index).css('top').slice(0, -2)/10)*10 - 10) } , "fast" );
+      enemy.animate({"top": String(Math.round(enemy.css('top').slice(0, -2)/10)*10 - 10) } , "fast" );
     } else if (direction == 'left'){
-      $('.enemy').eq(index).animate({"left": String(Math.round($('.enemy').eq(index).css('left').slice(0, -2)/10)*10 - 10) }, "fast" );
+      enemy.animate({"left": String(Math.round(enemy.css('left').slice(0, -2)/10)*10 - 10) }, "fast" );
     } else if (direction == 'down'){
-      $('.enemy').eq(index).animate({"top": String(Math.round($('.enemy').eq(index).css('top').slice(0, -2)/10)*10 + 10) } , "fast" );
+      enemy.animate({"top": String(Math.round(enemy.css('top').slice(0, -2)/10)*10 + 10) } , "fast" );
     } else if (direction == 'right'){
-      $('.enemy').eq(index).animate({"left": String(Math.round($('.enemy').eq(index).css('left').slice(0, -2)/10)*10 + 10) } , "fast" );
+      enemy.animate({"left": String(Math.round(enemy.css('left').slice(0, -2)/10)*10 + 10) } , "fast" );
     }
   }
 }
