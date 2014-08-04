@@ -6,7 +6,6 @@ var Controller = {
     this.snake.initialize();
   },
   bindEventListeners: function(){
-    this.subscribe(this);
     $(document).on('keydown', this.model.handler);
   },
   moveSnake: function(direction){
@@ -26,16 +25,11 @@ var Controller = {
   moveFood: function(){
     this.view.animateFood();
   },
-  subscribe: function(self){
-    $(document).on("eat", function(){
-      self.model.increaseSnakeLength(self);
-      self.moveFood(self);
-    })
-  },
+
   die: function(){
     this.view.resetScore();
   },
-  moveEnemy: function(direction, enemy, index){
-    this.view.animateEnemy(direction, enemy, index)
+  moveEnemy: function(direction, enemy, enemyIndex){
+    this.view.animateEnemy(direction, enemy, enemyIndex)
   }
 }

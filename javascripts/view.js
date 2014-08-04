@@ -21,8 +21,8 @@ var View = {
   resetScore: function(){
     $('#score').text(0);
   },
-  animateEnemy:function(direction, enemy, index){
-    var enemy = $('.enemy').eq(index);
+  animateEnemy:function(direction, enemy, enemyIndex){
+    var enemy = $('.enemy').eq(enemyIndex);
     enemy.clearQueue();
     if (direction == 'up' && enemy.css('top') > "110px"){
       enemy.animate({"top": String(Math.round(enemy.css('top').slice(0, -2)/10)*10 - 10) } , "fast" );
